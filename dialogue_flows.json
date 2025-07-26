@@ -1,0 +1,108 @@
+[
+  {
+    "id": "password_reset_inquiry",
+    "title": "Password Reset Inquiry",
+    "user_goal": "Reset their password.",
+    "description": "This flow demonstrates how the bot handles a common password-related query, directs the user to a knowledge article, and offers further assistance.",
+    "dialogue_steps": [
+      {
+        "step": 1,
+        "speaker": "User",
+        "utterance": "I forgot my password.",
+        "bot_action": "Recognizes 'Password Reset' intent."
+      },
+      {
+        "step": 2,
+        "speaker": "Bot",
+        "utterance": "No problem! I can help with that. Are you trying to reset your password for your account on our website, or for a different service?"
+      },
+      {
+        "step": 3,
+        "speaker": "User",
+        "utterance": "My website account.",
+        "bot_action": "Extracts 'website account' entity."
+      },
+      {
+        "step": 4,
+        "speaker": "Bot",
+        "utterance": "Okay, please follow the steps in this article to reset your password: [Link to Salesforce Knowledge Article: How to Reset Your Password]. Did that help resolve your issue?"
+      },
+      {
+        "step": 5,
+        "speaker": "User",
+        "utterance": "No, I'm still stuck.",
+        "bot_action": "Recognizes 'Negative Feedback' / 'Need More Help' intent."
+      },
+      {
+        "step": 6,
+        "speaker": "Bot",
+        "utterance": "I apologize that didn't help. It sounds like you might need a bit more assistance. Would you like me to connect you with a live support agent?"
+      },
+      {
+        "step": 7,
+        "speaker": "User",
+        "utterance": "Yes, please.",
+        "bot_action": "Recognizes 'Connect to Agent' intent. Triggers handoff."
+      },
+      {
+        "step": 8,
+        "speaker": "Bot",
+        "utterance": "Certainly. Please wait while I connect you to the next available agent. They will have access to our conversation history.",
+        "note": "Handoff to Human Agent"
+      }
+    ]
+  },
+  {
+    "id": "order_status_check",
+    "title": "Checking Order Status",
+    "user_goal": "Find out the status of their recent order.",
+    "description": "This flow demonstrates how the bot can collect information (order number) and provide a specific piece of data.",
+    "dialogue_steps": [
+      {
+        "step": 1,
+        "speaker": "User",
+        "utterance": "What's the status of my order?"
+      },
+      {
+        "step": 2,
+        "speaker": "Bot",
+        "utterance": "I can help you with that! Please provide your order number.",
+        "bot_action": "Recognizes 'Order Status Inquiry' intent."
+      },
+      {
+        "step": 3,
+        "speaker": "User",
+        "utterance": "My order number is 123456789.",
+        "bot_action": "Extracts '123456789' as 'Order Number' entity."
+      },
+      {
+        "step": 4,
+        "speaker": "Bot",
+        "utterance": "Thank you. Looking up order 123456789... Your order is currently 'Shipped' and is expected to arrive by July 30th. You can track it here: [Tracking Link].",
+        "bot_action": "Simulated Data Lookup"
+      },
+      {
+        "step": 5,
+        "speaker": "User",
+        "utterance": "Thanks!"
+      },
+      {
+        "step": 6,
+        "speaker": "Bot",
+        "utterance": "You're welcome! Is there anything else I can assist you with today?",
+        "bot_action": "Recognizes 'Gratitude' intent."
+      },
+      {
+        "step": 7,
+        "speaker": "User",
+        "utterance": "No, that's all."
+      },
+      {
+        "step": 8,
+        "speaker": "Bot",
+        "utterance": "Great! Have a wonderful day. Goodbye!",
+        "bot_action": "Recognizes 'End Conversation' intent. Conversation Ends."
+      }
+    ]
+  }
+]
